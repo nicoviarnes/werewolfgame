@@ -1,0 +1,27 @@
+werewolf game todos
+
+mechanics
+	DONE - day night cycle
+
+	character upgrade screen between cycles
+		pauses game while player chooses upgrades
+		upgrades
+			move speed
+			damage
+			dash range
+			
+	DONE - daytime = human character
+	DONE - 	villagers chase the player
+		player can hide in hiding spots
+		dogs? follow player and sniff out hiding spots
+				
+	DONE - nighttime = werewolf character
+	DONE - 	player chases villagers
+		score exp points for eating/infecting villagers
+		use exp point for upgrades
+		use werewolf abilities to hunt
+			dash
+			werewolf rage (speed boost?)
+			smell mechanic? highlight high value villager or something
+
+			
