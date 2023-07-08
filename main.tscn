@@ -13,7 +13,7 @@ script = ExtResource( 6 )
 
 [node name="GroundTiles" parent="." instance=ExtResource( 7 )]
 
-[node name="YSort" type="YSort" parent="."]
+[node name="YSort" type="YSort" parent="." groups=["container"]]
 
 [node name="Town" parent="YSort" instance=ExtResource( 1 )]
 

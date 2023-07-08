@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/villager/Villager.gd" type="Script" id=1]
 [ext_resource path="res://resources/villager_01.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://assets/villagers/Question_Mark_01.png" type="Texture" id=3]
+[ext_resource path="res://scenes/components/death_explosion/DeathExplosion.tscn" type="PackedScene" id=4]
 
 [sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( -5, 1, -5, -5, -4, -5, -4, -6, -3, -6, -3, -7, 4, -7, 4, -6, 5, -6, 5, -5, 6, -5, 6, -3, 5, -3, 5, 1, 4, 1, 4, 3, 5, 3, 5, 5, 4, 5, 4, 6, 3, 6, 3, 7, 1, 7, 1, 5, 0, 5, 0, 6, -1, 6, -1, 7, -2, 7, -2, 8, -4, 8, -4, 5, -6, 5, -6, 1 )
@@ -12,8 +14,15 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id=2]
 radius = 71.1126
 
+[sub_resource type="CircleShape2D" id=4]
+radius = 4.47214
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 8.0
+
 [node name="Villager" type="KinematicBody2D" groups=["villager"]]
 script = ExtResource( 1 )
+death_effect = ExtResource( 4 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 3 )
@@ -30,5 +39,25 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource( 2 )
 
+[node name="Question" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -15 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Hitbox" type="Area2D" parent="." groups=["enemy_hitbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 4 )
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["enemy_hurtbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource( 5 )
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_DetectionArea_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

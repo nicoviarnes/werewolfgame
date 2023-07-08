@@ -12,16 +12,27 @@ mechanics
 			
 	DONE - daytime = human character
 	DONE - 	villagers chase the player
-		player can hide in hiding spots
-		dogs? follow player and sniff out hiding spots
+	DONE - 	player can hide in hiding spots
+		DONE - hiding spots have a 5 second cooldown after exiting
+			show pixel art timer icon above bush when on CD
+			give exp on a succesful hide
+			give points on a succesful hide
+		DONE - enemies get confused and stop chasing when player hides
+			DONE - show confusion sprite above villager
+			DONE - knock player back when hit by villager
+
+		health hearts randomly spawn during the day
 				
 	DONE - nighttime = werewolf character
 	DONE - 	player chases villagers
 		score exp points for eating/infecting villagers
 		use exp point for upgrades
 		use werewolf abilities to hunt
-			dash
+			DONE - dash
+				add cooldown indicator to dash
+
 			werewolf rage (speed boost?)
 			smell mechanic? highlight high value villager or something
+		wolf exp randomly drops at night
 
 			

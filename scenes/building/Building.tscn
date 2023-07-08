@@ -8,7 +8,7 @@
 polygon = PoolVector2Array( 73, 47, 118, 47, 116, 83, 75, 83 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 22.5, 18 )
+extents = Vector2( 23, 18.5 )
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -49,7 +49,7 @@ script = ExtResource( 1 )
 occluder = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 95.5, 65 )
+position = Vector2( 95.5, 64.5 )
 shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]

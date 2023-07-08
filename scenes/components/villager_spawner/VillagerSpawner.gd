@@ -36,7 +36,8 @@ func make_villager():
 	day_night_cycle.connect("night", villager, "_on_night")
 	villager.global_position = global_position
 	villager.get_node("Sprite").frames = random_villager
-	get_tree().get_root().call_deferred("add_child", villager)
+	var container = get_tree().get_nodes_in_group("container")[0]
+	container.call_deferred("add_child", villager)
 	timer.start()
 
 

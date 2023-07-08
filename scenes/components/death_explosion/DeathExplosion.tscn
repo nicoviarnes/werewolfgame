@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/components/death_explosion/DeathExplosion.gd" type="Script" id=1]
+
+[node name="DeathExplosion" type="CPUParticles2D"]
+modulate = Color( 14.45, 1.1, 1.1, 1 )
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, -10 )
+initial_velocity = 25.0
+initial_velocity_random = 0.5
+color = Color( 0.694118, 0.0862745, 0.0862745, 1 )
+script = ExtResource( 1 )
