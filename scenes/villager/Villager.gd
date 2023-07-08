@@ -23,6 +23,10 @@ var chase = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite.play("default")
+	if CycleManager.daytime:
+		chase = true
+	else:
+		chase = false
 
 func _physics_process(_delta):
 	if player == null:

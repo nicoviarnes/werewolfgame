@@ -1,5 +1,7 @@
 extends Position2D
 
+onready var timer = $Timer
+
 export var amount_to_spawn :int
 export var villager_scene : PackedScene
 
@@ -35,4 +37,15 @@ func make_villager():
 	villager.global_position = global_position
 	villager.get_node("Sprite").frames = random_villager
 	get_tree().get_root().call_deferred("add_child", villager)
+	timer.start()
 
+
+
+
+func _on_Timer_timeout():
+	if CycleManager.daytime:
+		if get_tree().get_nodes_in_group("villager").size() < 100:
+			make_villager()
+	else:
+		timer.start()
+	

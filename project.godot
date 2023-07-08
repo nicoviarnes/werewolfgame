@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 AudioManager="*res://scripts/AudioManager.gd"
+CycleManager="*res://scripts/CycleManager.gd"
 
 [display]
 
@@ -25,6 +26,7 @@ window/size/height=360
 window/size/resizable=false
 window/size/test_width=1280
 window/size/test_height=720
+window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

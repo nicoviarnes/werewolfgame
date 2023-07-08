@@ -51,7 +51,7 @@ func _on_day():
 
 func _on_night():
 	shapeshift("wolf")
-	tween.interpolate_property(player_light, "energy", player_light.energy, 1.0, 2.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property(player_light, "energy", player_light.energy, 0.5, 2.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
 

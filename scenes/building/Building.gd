@@ -19,7 +19,7 @@ func _on_day():
 	anim.play_backwards("on")
 
 func _on_night():
-	tween.interpolate_property(light1, "energy", light1.energy, 0.3, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	tween.interpolate_property(light2, "energy", light2.energy, 0.3, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property(light1, "energy", light1.energy, 0.55, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property(light2, "energy", light2.energy, 0.55, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 	anim.play("on")
