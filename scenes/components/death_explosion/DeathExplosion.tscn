@@ -2,6 +2,7 @@
 
 [ext_resource path="res://scenes/components/death_explosion/DeathExplosion.gd" type="Script" id=1]
 
+
 [node name="DeathExplosion" type="CPUParticles2D"]
 modulate = Color( 14.45, 1.1, 1.1, 1 )
 emitting = false

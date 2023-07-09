@@ -30,7 +30,7 @@ func _on_DayTimer_timeout():
 	anim.play("sunset")
 	night_timer.start()
 	emit_signal("night")
-	CycleManager.daytime = false
+	CycleManager.update_day()
 
 
 func _on_NightTimer_timeout():
@@ -38,4 +38,4 @@ func _on_NightTimer_timeout():
 	anim.play("sunrise")
 	day_timer.start()
 	emit_signal("day")
-	CycleManager.daytime = true
+	CycleManager.update_day()

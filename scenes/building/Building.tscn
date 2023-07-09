@@ -4,6 +4,7 @@
 [ext_resource path="res://assets/props/structures/House_01-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://assets/lights/light.png" type="Texture" id=3]
 
+
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 73, 47, 118, 47, 116, 83, 75, 83 )
 

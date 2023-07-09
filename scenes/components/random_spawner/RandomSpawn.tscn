@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/components/random_spawner/RandomSpawn.gd" type="Script" id=1]
+[ext_resource path="res://scenes/components/pickups/ExpPickup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/components/pickups/HealthPickup.tscn" type="PackedScene" id=3]
+
+[node name="RandomSpawn" type="Node"]
+script = ExtResource( 1 )
+health_pickup = ExtResource( 3 )
+exp_pickup = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 48, 248 )
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( 62, 486 )
+
+[node name="Position2D3" type="Position2D" parent="."]
+position = Vector2( 166, 401 )
+
+[node name="Position2D4" type="Position2D" parent="."]
+position = Vector2( 160, 265 )
+
+[node name="Position2D5" type="Position2D" parent="."]
+position = Vector2( 283, 174 )
+
+[node name="Position2D6" type="Position2D" parent="."]
+position = Vector2( 355, 427 )
+
+[node name="Position2D7" type="Position2D" parent="."]
+position = Vector2( 266, 240 )
+
+[node name="Position2D8" type="Position2D" parent="."]
+position = Vector2( 102, 137 )
+
+[node name="Position2D9" type="Position2D" parent="."]
+position = Vector2( 73, 47 )
+
+[node name="Position2D10" type="Position2D" parent="."]
+position = Vector2( 214, 3 )
+
+[node name="Position2D11" type="Position2D" parent="."]
+position = Vector2( 327, -13 )
+
+[node name="Position2D12" type="Position2D" parent="."]
+position = Vector2( 363, 49 )
+
+[node name="Position2D13" type="Position2D" parent="."]
+position = Vector2( 436, 116 )
+
+[node name="Position2D14" type="Position2D" parent="."]
+position = Vector2( 558, 71 )
+
+[node name="Position2D15" type="Position2D" parent="."]
+position = Vector2( 571, -18 )
+
+[node name="Position2D16" type="Position2D" parent="."]
+position = Vector2( 452, -90 )
+
+[node name="Position2D17" type="Position2D" parent="."]
+position = Vector2( 469, 187 )
+
+[node name="Position2D18" type="Position2D" parent="."]
+position = Vector2( 310, 365 )
+
+[node name="Position2D19" type="Position2D" parent="."]
+position = Vector2( 582, 278 )
+
+[node name="Position2D20" type="Position2D" parent="."]
+position = Vector2( 478, 423 )
+
+[node name="Position2D21" type="Position2D" parent="."]
+position = Vector2( 660, 283 )
+
+[node name="Position2D22" type="Position2D" parent="."]
+position = Vector2( 755, 197 )
+
+[node name="Position2D23" type="Position2D" parent="."]
+position = Vector2( 671, 95 )
+
+[node name="Position2D24" type="Position2D" parent="."]
+position = Vector2( 740, 3 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

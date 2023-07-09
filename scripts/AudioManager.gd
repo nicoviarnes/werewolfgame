@@ -12,7 +12,7 @@ func _ready() -> void:
 		player.connect("finished", self, "_on_stream_finished", [player])
 
 
-func on_stream_finished(stream : AudioStreamPlayer) -> void:
+func _on_stream_finished(stream : AudioStreamPlayer) -> void:
 	available.append(stream)
 
 

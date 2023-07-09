@@ -50,6 +50,8 @@ func _physics_process(_delta):
 				question_mark.visible = true
 				timer.start()
 				player = null
+				ExpManager.update_exp(20)
+				ScoreManager.update_score(250)
 				return
 			direction = (player.position - position).normalized()
 			move_and_slide(direction * run_speed)
@@ -65,18 +67,21 @@ func choose_random_direction():
 		1:
 			return Vector2.DOWN
 		2:
+			sprite.flip_h = true
 			return Vector2.LEFT
 		3:
+			sprite.flip_h = false
 			return Vector2.RIGHT
 
-
 func take_damage():
-	print("villager take damage")
+	AudioManager.play(load("res://assets/sounds/villager/die.wav"), "SFX", 0)
+	
 	var deathFX = death_effect.instance()
 	deathFX.global_position = global_position
 	var container = get_tree().get_nodes_in_group("container")[0]
 	container.call_deferred("add_child", deathFX)
 	ScoreManager.update_score(1000)
+	ExpManager.update_exp(25)
 	queue_free()
 
 

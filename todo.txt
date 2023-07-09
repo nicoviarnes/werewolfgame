@@ -1,38 +1,37 @@
 werewolf game todos
 
-mechanics
-	DONE - day night cycle
 
-	character upgrade screen between cycles
-		pauses game while player chooses upgrades
-		upgrades
-			move speed
-			damage
-			dash range
-			
-	DONE - daytime = human character
-	DONE - 	villagers chase the player
-	DONE - 	player can hide in hiding spots
-		DONE - hiding spots have a 5 second cooldown after exiting
-			show pixel art timer icon above bush when on CD
-			give exp on a succesful hide
-			give points on a succesful hide
-		DONE - enemies get confused and stop chasing when player hides
-			DONE - show confusion sprite above villager
-			DONE - knock player back when hit by villager
+	find font
 
-		health hearts randomly spawn during the day
-				
-	DONE - nighttime = werewolf character
-	DONE - 	player chases villagers
-		score exp points for eating/infecting villagers
-		use exp point for upgrades
-		use werewolf abilities to hunt
-			DONE - dash
-				add cooldown indicator to dash
+	screen shake
 
-			werewolf rage (speed boost?)
-			smell mechanic? highlight high value villager or something
-		wolf exp randomly drops at night
+	splash screen
 
-			
+	
+	pause menu
+		main menu button
+		settings button
+	upgrade menu
+		wolf speed
+		human speed
+		wolf dash
+		human dash
+	music
+
+
+	add cooldown indicator to dash	
+
+
+
+	WISHLIST
+		Make menu screen pretty
+		make settings screen pretty
+		make gameover pretty
+
+		add health to villagers
+		add damage to wolf so it doenst one shot
+		scale villager health with player level
+		fence off northern half
+		revisit camera borders and map size
+		add more moving trees
+		optimize fps

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/props/nature/bush/Bush.gd" type="Script" id=1]
 [ext_resource path="res://assets/props/nature/PNGs/Bush_01.png" type="Texture" id=2]
+[ext_resource path="res://scenes/props/Clock.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
@@ -35,8 +36,17 @@ shape = SubResource( 1 )
 material = SubResource( 3 )
 texture = ExtResource( 2 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="Clock" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 0, -11 )
+scale = Vector2( 0.5, 0.5 )
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]

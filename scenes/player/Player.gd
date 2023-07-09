@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal hurt
+signal health_pickup
+
 onready var tween = $Tween
 onready var anim = $AnimationPlayer
 onready var human_sprite = $HumanSprite
@@ -89,6 +92,7 @@ func shapeshift(form):
 			current_sprite.visible = true
 			old_sprite.visible = false
 		"wolf":
+			AudioManager.play(load("res://assets/sounds/player/transform.wav"), "SFX", 0)
 			if hiding:
 				exit_bush()
 			speed = 150
@@ -101,6 +105,7 @@ func shapeshift(form):
 
 func dash(dir):
 	if not dash_cooldown:
+		AudioManager.play(load("res://assets/sounds/player/dash.wav"), "SFX", 0)
 		dashing = true
 		velocity = dir * dash_speed
 		dashing = false
@@ -109,6 +114,7 @@ func dash(dir):
 
 
 func hide_in_bush():
+	AudioManager.play(load("res://assets/sounds/bush/01_bush_rustling_1.wav"), "SFX", 0)
 	hiding = true
 	global_position = nearest_bush.global_position
 	global_position.y -= 5
@@ -121,7 +127,7 @@ func exit_bush():
 
 
 func take_damage():
-	print("player take damage")
+	emit_signal("hurt")
 
 
 func _on_Detection_area_entered(area):
@@ -148,6 +154,7 @@ func _on_Hitbox_area_entered(area):
 func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("enemy_hitbox"):
 		if current_form == "human":
-			var bump_direction = (global_position - area.global_position).normalized()
-			velocity = bump_direction * 175
-			take_damage()
+			if not hiding:
+				var bump_direction = (global_position - area.global_position).normalized()
+				velocity = bump_direction * 175
+				take_damage()
