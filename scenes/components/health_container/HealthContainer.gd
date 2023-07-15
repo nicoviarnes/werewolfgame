@@ -45,5 +45,6 @@ func end_game():
 	game_over = true
 	for child in get_children():
 		child.queue_free()
+	AudioManager.clear_all_audio()
 	var SceneManager = get_tree().get_nodes_in_group("SceneManager")[0]
 	SceneManager.change_scene(3)

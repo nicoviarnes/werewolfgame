@@ -2,6 +2,7 @@ extends Node
 
 
 signal update_exp_bar
+signal level_up
 
 var xp = 0
 
@@ -21,5 +22,7 @@ func update_exp(i):
 		level += 1
 		levelup_xp *= 1.6
 		xp = 0
+		SkillManager.skill_points += 1
+		emit_signal("level_up")
 
 	emit_signal("update_exp_bar", i)

@@ -2,19 +2,23 @@ extends KinematicBody2D
 
 signal hurt
 signal health_pickup
+signal dash
+signal near_bush
+signal in_bush
 
+onready var camera = $Camera2D
 onready var tween = $Tween
 onready var anim = $AnimationPlayer
 onready var human_sprite = $HumanSprite
 onready var wolf_sprite = $WolfSprite
 onready var player_light = $PlayerLight
 onready var dash_timer = $DashTimer
+onready var dash_speed = SkillManager.dash_length
+onready var speed = SkillManager.human_speed
 
-export var speed = 75
 export var friction = 0.1
 export var acceleration = 0.1
-var dash_speed = 300
-var health = 100
+
 
 var velocity = Vector2()
 
@@ -29,6 +33,10 @@ var hiding = false
 
 var dashing = false
 var dash_cooldown = false
+
+
+func _ready():
+	SkillManager.connect("update_stats", self, "_on_update_stats")
 
 func get_input():
 	var input = Vector2()
@@ -83,20 +91,21 @@ func _on_night():
 
 func shapeshift(form):
 	current_form = form
+	camera.apply_noise_shake()
 	match form:
 		"human":
-			speed = 50
-			dash_speed = 150
+			speed = SkillManager.human_speed
+			dash_speed = SkillManager.dash_length
 			old_sprite = wolf_sprite
 			current_sprite = human_sprite
 			current_sprite.visible = true
 			old_sprite.visible = false
 		"wolf":
+			speed = SkillManager.wolf_speed
+			dash_speed = SkillManager.dash_length
 			AudioManager.play(load("res://assets/sounds/player/transform.wav"), "SFX", 0)
 			if hiding:
 				exit_bush()
-			speed = 150
-			dash_speed = 400
 			old_sprite = human_sprite
 			current_sprite = wolf_sprite
 			current_sprite.visible = true
@@ -105,6 +114,7 @@ func shapeshift(form):
 
 func dash(dir):
 	if not dash_cooldown:
+		emit_signal("dash")
 		AudioManager.play(load("res://assets/sounds/player/dash.wav"), "SFX", 0)
 		dashing = true
 		velocity = dir * dash_speed
@@ -114,6 +124,7 @@ func dash(dir):
 
 
 func hide_in_bush():
+	emit_signal("in_bush", true)
 	AudioManager.play(load("res://assets/sounds/bush/01_bush_rustling_1.wav"), "SFX", 0)
 	hiding = true
 	global_position = nearest_bush.global_position
@@ -121,22 +132,29 @@ func hide_in_bush():
 
 
 func exit_bush():
+	emit_signal("in_bush", false)
+	emit_signal("near_bush", false)
 	nearest_bush.start_cooldown()
 	nearest_bush = null
 	hiding = false
 
 
 func take_damage():
+	camera.apply_noise_shake()
 	emit_signal("hurt")
 
 
 func _on_Detection_area_entered(area):
 	if area.is_in_group("bush"):
+		if current_form != "wolf":
+			emit_signal("near_bush", true)
 		nearest_bush = area
 
 
 func _on_Detection_area_exited(area):
 	if area.is_in_group("bush"):
+		if current_form != "wolf":
+			emit_signal("near_bush", false)
 		nearest_bush = null
 
 
@@ -156,5 +174,13 @@ func _on_Hurtbox_area_entered(area):
 		if current_form == "human":
 			if not hiding:
 				var bump_direction = (global_position - area.global_position).normalized()
-				velocity = bump_direction * 175
+				velocity = bump_direction * 250
 				take_damage()
+
+
+func _on_update_stats():
+	dash_speed = SkillManager.dash_length
+	if current_form == "human":
+		speed = SkillManager.human_speed
+	else:
+		speed = SkillManager.wolf_speed

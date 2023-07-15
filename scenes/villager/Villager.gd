@@ -74,7 +74,7 @@ func choose_random_direction():
 			return Vector2.RIGHT
 
 func take_damage():
-	AudioManager.play(load("res://assets/sounds/villager/die.wav"), "SFX", 0)
+	AudioManager.play(load("res://assets/sounds/villager/die.wav"), "SFX", -15)
 	
 	var deathFX = death_effect.instance()
 	deathFX.global_position = global_position

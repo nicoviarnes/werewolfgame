@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/components/scene_manager/SceneManager.gd" type="Script" id=1]
+[ext_resource path="res://scenes/UI/upgrade_panel/UpgradePanel.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -45,3 +46,9 @@ color = Color( 1, 1, 1, 0 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
 anims/dissolve = SubResource( 2 )
+
+[node name="UpgradePanel" parent="." instance=ExtResource( 2 )]
+margin_top = -360.0
+margin_bottom = -360.0
+
+[node name="Tween" type="Tween" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/UI/PlayerUI.gd" type="Script" id=1]
 [ext_resource path="res://scenes/components/health_container/HealthContainer.tscn" type="PackedScene" id=2]
@@ -6,6 +6,21 @@
 [ext_resource path="res://assets/UI/heartbar/Heart_Bar_Empty_01.png" type="Texture" id=4]
 [ext_resource path="res://scenes/UI/ExpBar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/components/FCT/FCTManager.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/Fibberish v1.0/fibberish.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/components/icons/DashIcon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/components/icons/HideIcon.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
 
 [node name="PlayerUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -30,14 +45,6 @@ margin_right = 559.0
 margin_bottom = -92.0
 rect_scale = Vector2( -1, 1 )
 
-[node name="Score" type="Label" parent="."]
-margin_left = 12.0
-margin_top = 13.0
-margin_right = 79.0
-margin_bottom = 27.0
-custom_colors/font_color = Color( 1, 0.843137, 0, 1 )
-text = "Score: 0"
-
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -6.0
 margin_top = 312.0
@@ -57,20 +64,41 @@ margin_right = 161.5
 margin_bottom = 16.0
 rect_scale = Vector2( 0.767392, 0.876535 )
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Score" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -318.0
+margin_top = -176.0
+margin_right = -212.0
+margin_bottom = -151.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Score: 0"
+align = 1
+valign = 1
+uppercase = true
+
 [node name="NightWarning" type="Label" parent="."]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -99.5
-margin_top = -7.0
-margin_right = 99.5
-margin_bottom = 7.0
+margin_left = -145.0
+margin_top = -12.5
+margin_right = 145.0
+margin_bottom = 12.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "10 seconds until nightfall"
 align = 1
 valign = 1
-uppercase = true
 
 [node name="SunWarning" type="Label" parent="."]
 visible = false
@@ -78,18 +106,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -90.5
-margin_top = -7.0
-margin_right = 90.5
-margin_bottom = 7.0
+margin_left = -139.5
+margin_top = -12.5
+margin_right = 139.5
+margin_bottom = 12.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "10 seconds until sunrise"
 align = 1
 valign = 1
-uppercase = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
+[node name="HideIcon" parent="." instance=ExtResource( 9 )]
+margin_left = 378.0
+margin_top = 321.0
+margin_right = 408.0
+margin_bottom = 351.0
+stretch_mode = 1
+
+[node name="DashIcon" parent="." instance=ExtResource( 8 )]
+margin_left = 278.0
+margin_top = 320.0
+margin_right = 365.0
+margin_bottom = 352.0
 
 [connection signal="warning" from="CycleTimerUI" to="." method="_on_CycleTimerUI_warning"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

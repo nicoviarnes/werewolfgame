@@ -1,0 +1,852 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/UI/sun.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/moon.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/brown_button/hover.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/brown_button/normal.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/brown_button/pressed.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/Fibberish v1.0/fibberish.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/UI/boards/Brown_Board_02.png" type="Texture" id=7]
+[ext_resource path="res://Tutorial.gd" type="Script" id=8]
+[ext_resource path="res://scenes/props/nature/bush/Bush1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/props/nature/bush/Bush2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/props/pickups/Orb_Animated_01-Sheet.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/heartbar/Heart_01.png" type="Texture" id=12]
+[ext_resource path="res://scenes/props/nature/tree/Tree.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/props/nature/tree/Tree2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/props/nature/tree/Tree4.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/props/nature/tree/Tree3.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/groundtiles/GroundTiles.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/player/werewolf_run.png" type="Texture" id=18]
+[ext_resource path="res://assets/player/human_run.png" type="Texture" id=19]
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 1
+outline_color = Color( 0.321569, 0.227451, 0.12549, 1 )
+font_data = ExtResource( 6 )
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource( 8 )
+
+[node name="GroundTiles" parent="." instance=ExtResource( 17 )]
+position = Vector2( -285, -337 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Tree2" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 146, 244 )
+
+[node name="Tree3" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 181, 269 )
+
+[node name="Tree" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 213, 266 )
+
+[node name="Tree5" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 111, 238 )
+
+[node name="Tree6" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 146, 263 )
+
+[node name="Tree8" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 178, 260 )
+
+[node name="Tree9" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 55, 260 )
+
+[node name="Tree10" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 90, 285 )
+
+[node name="Tree70" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 245, 35 )
+
+[node name="Tree71" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 210, 29 )
+
+[node name="Tree72" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 245, 54 )
+
+[node name="Tree77" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 277, 51 )
+
+[node name="Tree78" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 217, 42 )
+
+[node name="Tree12" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 122, 282 )
+
+[node name="Tree13" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 168, 295 )
+
+[node name="Tree79" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 102, 152 )
+
+[node name="Tree80" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 137, 177 )
+
+[node name="Tree81" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 67, 146 )
+
+[node name="Tree82" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 102, 171 )
+
+[node name="Tree83" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 130, 137 )
+
+[node name="Tree84" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 134, 168 )
+
+[node name="Tree85" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 46, 193 )
+
+[node name="Tree86" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 78, 190 )
+
+[node name="Tree87" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 124, 203 )
+
+[node name="Tree14" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 203, 320 )
+
+[node name="Tree15" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 231, 286 )
+
+[node name="Tree16" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 235, 317 )
+
+[node name="Tree17" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 321, 332 )
+
+[node name="Tree18" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 356, 357 )
+
+[node name="Tree19" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 384, 323 )
+
+[node name="Tree20" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 388, 354 )
+
+[node name="Tree21" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 286, 326 )
+
+[node name="Tree22" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 321, 351 )
+
+[node name="Tree23" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 349, 317 )
+
+[node name="Tree24" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 353, 348 )
+
+[node name="Tree25" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 230, 348 )
+
+[node name="Tree27" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 293, 339 )
+
+[node name="Tree26" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 399, 27 )
+
+[node name="Tree28" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 431, 24 )
+
+[node name="Tree29" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 364, 21 )
+
+[node name="Tree30" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 396, 18 )
+
+[node name="Tree31" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 308, 43 )
+
+[node name="Tree32" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 340, 40 )
+
+[node name="Tree42" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 386, 53 )
+
+[node name="Tree45" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 421, 78 )
+
+[node name="Tree46" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 449, 44 )
+
+[node name="Tree65" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 157, 62 )
+
+[node name="Tree66" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 189, 59 )
+
+[node name="Tree67" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 235, 72 )
+
+[node name="Tree68" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 298, 63 )
+
+[node name="Tree47" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 453, 75 )
+
+[node name="Tree48" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 539, 90 )
+
+[node name="Tree50" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 574, 115 )
+
+[node name="Tree51" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 602, 81 )
+
+[node name="Tree52" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 606, 112 )
+
+[node name="Tree55" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 504, 84 )
+
+[node name="Tree56" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 539, 109 )
+
+[node name="Tree61" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 567, 75 )
+
+[node name="Tree62" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 571, 106 )
+
+[node name="Tree63" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 448, 106 )
+
+[node name="Tree64" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 511, 97 )
+
+[node name="Tree33" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 518, 324 )
+
+[node name="Tree34" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 553, 349 )
+
+[node name="Tree35" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 581, 315 )
+
+[node name="Tree36" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 585, 346 )
+
+[node name="Tree37" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 483, 318 )
+
+[node name="Tree38" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 518, 343 )
+
+[node name="Tree39" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 546, 309 )
+
+[node name="Tree40" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 550, 340 )
+
+[node name="Tree88" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 70, 92 )
+
+[node name="Tree89" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 105, 117 )
+
+[node name="Tree90" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 133, 83 )
+
+[node name="Tree91" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 70, 111 )
+
+[node name="Tree92" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 102, 108 )
+
+[node name="Tree41" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 427, 340 )
+
+[node name="Tree43" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 490, 331 )
+
+[node name="Tree44" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 494, 362 )
+
+[node name="Tree49" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 620, 235 )
+
+[node name="Tree53" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 585, 229 )
+
+[node name="Tree54" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 620, 254 )
+
+[node name="Tree57" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 529, 251 )
+
+[node name="Tree58" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 564, 276 )
+
+[node name="Tree59" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 592, 242 )
+
+[node name="Tree60" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 596, 273 )
+
+[node name="Tree69" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 622, 131 )
+
+[node name="Tree73" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 566, 153 )
+
+[node name="Tree74" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 601, 178 )
+
+[node name="Tree75" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 629, 144 )
+
+[node name="Tree76" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 633, 175 )
+
+[node name="PanelTween" type="Tween" parent="."]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel1" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -131.5
+margin_right = 145.0
+margin_bottom = -106.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Tutorial"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel1"]
+margin_left = 270.0
+margin_top = 207.0
+margin_right = 294.0
+margin_bottom = 231.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel1"]
+margin_left = 277.0
+margin_top = 146.0
+margin_right = 301.0
+margin_bottom = 170.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Label2" type="Label" parent="Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -83.5
+margin_right = 144.0
+margin_bottom = -52.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- Watch the timer to keep track of the day and night cycle"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -27.0
+margin_right = 144.0
+margin_bottom = 4.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- During the     you are a puny human and must run for your life"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 35.0
+margin_right = 144.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- During the     you are a fearsome wolf that devours villagers"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="Control/Panel1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 104.0
+margin_right = 144.0
+margin_bottom = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1 / 5"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Panel2" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 640.0
+margin_right = 640.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Control/Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -131.5
+margin_right = 145.0
+margin_bottom = -106.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Controls"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="Control/Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 104.0
+margin_right = 144.0
+margin_bottom = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "2 / 5"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Control/Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -83.5
+margin_right = 144.0
+margin_bottom = -52.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- WASD to move"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Control/Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -27.0
+margin_right = 144.0
+margin_bottom = 4.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- SPACE to dash"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="Control/Panel2"]
+position = Vector2( 270, 211 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+hframes = 6
+
+[node name="Sprite2" type="Sprite" parent="Control/Panel2"]
+position = Vector2( 369, 212 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 18 )
+hframes = 6
+
+[node name="Panel3" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1280.0
+margin_right = 1280.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Bush1" parent="Control/Panel3" instance=ExtResource( 9 )]
+position = Vector2( 264, 144 )
+scale = Vector2( 3, 3 )
+
+[node name="Label" type="Label" parent="Control/Panel3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -131.5
+margin_right = 145.0
+margin_bottom = -106.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Tutorial"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="Control/Panel3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 104.0
+margin_right = 144.0
+margin_bottom = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "3 / 5"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Control/Panel3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -83.5
+margin_right = 144.0
+margin_bottom = -52.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- Press F to enter/exit a nearby bush"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Control/Panel3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -8.5
+margin_right = 144.0
+margin_bottom = 22.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- You are safe from villagers in the bushes"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Control/Panel3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 41.5
+margin_right = 144.0
+margin_bottom = 72.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- You gain score and XP for hiding in the daytime"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Bush2" parent="Control/Panel3" instance=ExtResource( 10 )]
+position = Vector2( 374, 144 )
+scale = Vector2( 3, 3 )
+
+[node name="Panel4" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1920.0
+margin_right = 1920.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Control/Panel4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -131.5
+margin_right = 145.0
+margin_bottom = -106.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Tutorial"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="Control/Panel4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 104.0
+margin_right = 144.0
+margin_bottom = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "4 / 5"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Control/Panel4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -83.5
+margin_right = 144.0
+margin_bottom = -52.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- You transform into a WEREWOLF at night and devour the villagers"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Control/Panel4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -27.0
+margin_right = 144.0
+margin_bottom = 4.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- You gain score and XP for every villager you devour"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Control/Panel4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 35.0
+margin_right = 144.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- Improve your stats when you level up"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Panel5" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2560.0
+margin_right = 2560.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Control/Panel5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -131.5
+margin_right = 145.0
+margin_bottom = -106.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Tutorial"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="Control/Panel5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = 104.0
+margin_right = 144.0
+margin_bottom = 135.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "5 / 5"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Control/Panel5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -83.5
+margin_right = 144.0
+margin_bottom = -52.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- Health     will spawn during the day"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Control/Panel5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -27.0
+margin_right = 144.0
+margin_bottom = 4.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "- XP      will spawn during the night"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Heart01" type="Sprite" parent="Control/Panel5"]
+position = Vector2( 264, 109 )
+scale = Vector2( 0.893229, 0.893229 )
+texture = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="Control/Panel5"]
+position = Vector2( 247.75, 165.75 )
+scale = Vector2( 0.695314, 0.695314 )
+texture = ExtResource( 11 )
+hframes = 6
+
+[node name="Back" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -138.0
+margin_top = 93.0
+margin_right = -63.0
+margin_bottom = 133.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Back"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -12.5
+margin_right = 53.0
+margin_bottom = 12.5
+custom_colors/font_color = Color( 0.54902, 0.396078, 0.219608, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "play"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Tween" type="Tween" parent="Back"]
+
+[node name="Forward" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 63.0
+margin_top = 93.0
+margin_right = 138.0
+margin_bottom = 133.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Forward"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -12.5
+margin_right = 53.0
+margin_bottom = 12.5
+custom_colors/font_color = Color( 0.54902, 0.396078, 0.219608, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "play"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Tween" type="Tween" parent="Forward"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="button_down" from="Back" to="." method="_on_Back_button_down"]
+[connection signal="button_up" from="Back" to="." method="_on_Back_button_up"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="button_down" from="Forward" to="." method="_on_Forward_button_down"]
+[connection signal="button_up" from="Forward" to="." method="_on_Forward_button_up"]
+[connection signal="pressed" from="Forward" to="." method="_on_Forward_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
